@@ -18,12 +18,10 @@ public class Sistema implements Serializable {
     private PilaReciclaje<Residuo> residuosParaProcesar; 
     private Map<String, Zona> mapaZonas; 
     private Map<String, Object> estadisticasGlobales; 
-    
-
     private Comparator<Residuo> comparadorActivo; 
-    
     private transient ComparadorVehiculo comparadorVehiculo; 
 
+    
     public Sistema() {
         this.listaResiduos = new ListaEnlazadaCircular<>();
         this.mapaZonas = new HashMap<>(); 
