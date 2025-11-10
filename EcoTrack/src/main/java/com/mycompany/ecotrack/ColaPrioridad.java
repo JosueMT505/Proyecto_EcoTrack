@@ -1,5 +1,5 @@
 
-package Grupo_08.estructuras;
+package com.mycompany.ecotrack;
 
 import java.util.ArrayList;
 import java.util.Comparator;
