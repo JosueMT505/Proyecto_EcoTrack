@@ -1,23 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Grupo_08.estructuras;
+
+package com.mycompany.ecotrack;
 
 /**
  *
- * @author Usuario
- * @param <E>
+ * @author Grupo 8
  */
 public class Nodo<E> {
     private E contenido;
     private Nodo<E> siguiente;
     private Nodo<E> anterior;
 
-    // Constructor
     public Nodo(E contenido) {
         this.contenido = contenido;
-        // Inicialmente, en la lista circular los punteros serán establecidos por la propia lista.
         this.siguiente = null; 
         this.anterior = null;
     }
