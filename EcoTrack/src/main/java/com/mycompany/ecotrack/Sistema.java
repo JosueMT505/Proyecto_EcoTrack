@@ -31,7 +31,6 @@ public class Sistema implements Serializable {
         this.residuosParaProcesar = new PilaReciclaje<>();
         
         this.comparadorActivo = new ComparadorPrioridad();
-        // El comparador de vehículos se inicializa aquí y se pasa a la cola
         this.comparadorVehiculo = new ComparadorVehiculo(this);
         this.colaVehiculosPendientes = new ColaPrioridad<>(this.comparadorVehiculo);
     }
