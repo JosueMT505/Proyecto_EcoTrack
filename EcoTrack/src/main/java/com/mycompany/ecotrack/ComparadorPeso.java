@@ -1,7 +1,6 @@
 
-package Grupo_08.comparadores;
+package com.mycompany.ecotrack;
 
-import Grupo_08.modelo.Residuo;
 import java.util.Comparator;
 
 /**
