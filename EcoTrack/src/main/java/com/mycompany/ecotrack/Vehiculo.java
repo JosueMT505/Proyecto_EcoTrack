@@ -1,23 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Grupo_08.modelo;
+
+package com.mycompany.ecotrack;
 
 import java.io.Serializable;
 
 /**
  *
- * @author Usuario
+ * @author Grupo 8
  */
 public class Vehiculo implements Serializable {
     private String id;
-    private double capacidadMaxima; // Capacidad de carga del vehículo
+    private double capacidadMaxima; 
     private double volumenActual;
-    private String zonaAsignadaId; // La zona que tiene asignada para recolección
+    private String zonaAsignadaId; 
     private boolean enRuta;
-    
-    // El nivel de llenado puede ser un factor de prioridad
     private double nivelLlenado; 
 
     public Vehiculo(String id, double capacidadMaxima, String zonaAsignadaId) {
@@ -29,10 +24,8 @@ public class Vehiculo implements Serializable {
         this.enRuta = false;
     }
 
-    // --- Lógica ---
 
     public double getNivelLlenado() {
-        // Porcentaje de llenado (0.0 a 1.0)
         return volumenActual / capacidadMaxima; 
     }
     
@@ -41,7 +34,7 @@ public class Vehiculo implements Serializable {
         this.nivelLlenado = getNivelLlenado();
     }
     
-    // --- Getters y Setters ---
+
 
     public String getId() { return id; }
     public double getCapacidadMaxima() { return capacidadMaxima; }
