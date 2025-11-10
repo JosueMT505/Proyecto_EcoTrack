@@ -1,12 +1,7 @@
 
-package Grupo_08.modelo;
+package com.mycompany.ecotrack;
 
-import Grupo_08.comparadores.ComparadorPrioridad;
-import Grupo_08.comparadores.ComparadorVehiculo;
-import Grupo_08.estructuras.ColaPrioridad;
-import Grupo_08.estructuras.ListaEnlazadaCircular;
-import Grupo_08.estructuras.PilaReciclaje;
-import Grupo_08.persistencia.Persistencia;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Comparator;
@@ -77,7 +72,6 @@ public class Sistema implements Serializable {
         }
     }
     
-    // GETTERS PARA EL COMPARADOR Y LA INTERFAZ
 
     public Map<String, Zona> getMapaZonas() {
         return mapaZonas;
