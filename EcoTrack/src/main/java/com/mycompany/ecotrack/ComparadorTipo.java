@@ -1,15 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Grupo_08.comparadores;
 
-import Grupo_08.modelo.Residuo;
+package com.mycompany.ecotrack;
+
 import java.util.Comparator;
 
 /**
  *
- * @author Usuario
+ * @author Grupo 8
  */
 public class ComparadorTipo implements Comparator<Residuo> {
     @Override
