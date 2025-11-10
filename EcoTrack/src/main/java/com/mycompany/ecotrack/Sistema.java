@@ -15,13 +15,13 @@ import java.util.Map;
 
 /**
  *
- * @author Usuario
+ * @author Grupo 8
  */
 public class Sistema implements Serializable {
     private ListaEnlazadaCircular<Residuo> listaResiduos; 
     private ColaPrioridad<Vehiculo> colaVehiculosPendientes; 
     private PilaReciclaje<Residuo> residuosParaProcesar; 
-    private Map<String, Zona> mapaZonas; // Uso obligatorio de Mapas [cite: 86]
+    private Map<String, Zona> mapaZonas; 
     private Map<String, Object> estadisticasGlobales; 
     
 
