@@ -27,7 +27,7 @@ public class Sistema implements Serializable {
     private Map<String, Zona> mapaZonas; // Uso obligatorio de Mapas [cite: 86]
     private Map<String, Object> estadisticasGlobales; 
     
-    // --- CONTROL DE ORDENAMIENTO ---
+
     private Comparator<Residuo> comparadorActivo; 
     
     // El comparador de vehículos necesita una referencia a la instancia del sistema
