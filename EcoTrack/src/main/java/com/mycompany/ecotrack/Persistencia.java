@@ -1,10 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Grupo_08.persistencia;
 
-import Grupo_08.modelo.Sistema;
+package com.mycompany.ecotrack;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,7 +9,7 @@ import java.io.ObjectOutputStream;
 
 /**
  *
- * @author Usuario
+ * @author Grupo 8
  */
 public class Persistencia {
     public static void guardar(Sistema sistema, String archivo) throws IOException {
