@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class Sistema implements Serializable {
     private ListaEnlazadaCircular<Residuo> listaResiduos; 
-    private ColaPrioridad<Vehiculo> colaVehiculosPendientes; 
+    private ColaPrioridad<VehiculoRecolector> colaVehiculosPendientes; 
     private PilaReciclaje<Residuo> residuosParaProcesar; 
     private Map<String, Zona> mapaZonas; 
     private Map<String, Object> estadisticasGlobales; 
