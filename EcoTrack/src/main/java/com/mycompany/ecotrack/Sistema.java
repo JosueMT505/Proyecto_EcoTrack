@@ -57,8 +57,6 @@ public class Sistema implements Serializable {
         this.colaVehiculosPendientes.setComparador(this.comparadorVehiculo);
     }
 
-    /* ===== Gestion de residuos ===== */
-
     public boolean registrarResiduo(Residuo residuo) {
         if (residuo == null) return false;
 
@@ -76,9 +74,6 @@ public class Sistema implements Serializable {
         return true;
     }
 
-    /**
-     * Simula recoleccion: mueve un residuo de una zona al centro de reciclaje (pila).
-     */
     public boolean recolectarResiduo(String idResiduo) {
         if (idResiduo == null) return false;
 

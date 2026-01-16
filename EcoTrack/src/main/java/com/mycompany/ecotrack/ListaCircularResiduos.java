@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @author josue
  */
 public class ListaCircularResiduos implements Serializable {
-
+    private Nodo inicio;
     private final CircularDoublyLinkedList<Residuo> lista;
 
     public ListaCircularResiduos() {
@@ -76,6 +76,18 @@ public class ListaCircularResiduos implements Serializable {
         return lista.size();
     }
 
+    public java.util.ArrayList<Residuo> getResiduos() {
+    java.util.ArrayList<Residuo> lista = new java.util.ArrayList<>();
+    if (inicio != null) {
+        Nodo actual = inicio;
+        do {
+            lista.add(actual.getResiduo());
+            actual = actual.getSiguiente();
+        } while (actual != inicio);
+    }
+    return lista;
+}
+    
     /**
      * Retorna el primer residuo (o null si está vacía).
      */
@@ -84,6 +96,10 @@ public class ListaCircularResiduos implements Serializable {
         return lista.get(0);
     }
 
+    public CircularDoublyLinkedList<Residuo> getListaInterna() {
+    return lista;
+}
+    
     /**
      * (Opcional) Devuelve el iterador personalizado para recorrer la lista.
      */
@@ -108,4 +124,10 @@ public class ListaCircularResiduos implements Serializable {
     public String toString() {
         return lista.toString();
     }
+    
+    public Nodo getInicio() {
+        return inicio; 
+    }
+    
+    
 }

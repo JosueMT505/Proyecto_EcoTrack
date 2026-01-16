@@ -4,15 +4,14 @@
  */
 package com.mycompany.ecotrack;
 
-/**
- *
- * @author joshu
- */
-public class ArrayList<E>{
+import java.io.Serializable;
+
+public class ArrayList<E> implements Serializable{
     private int capacity;
     private int effectiveSize;
-    private E[] elements; //Arreglo donde se almacenan los elementos de tipo E(genericos)
-    
+    private E[] elements;
+    private static final long serialVersionUID = 1L;
+            
     public ArrayList() {
         this.capacity =  100;
         this.effectiveSize = 0;
@@ -21,7 +20,7 @@ public class ArrayList<E>{
     
     
     public int size(){
-        return effectiveSize; //Devuelve la cantidad de elementos que actualmente hay en el ArrayList
+        return effectiveSize;
     }
     
     public boolean isEmpty(){

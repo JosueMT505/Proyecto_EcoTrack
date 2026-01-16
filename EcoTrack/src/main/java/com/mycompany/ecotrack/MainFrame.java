@@ -66,7 +66,7 @@ public class MainFrame extends JFrame {
         lblResiduos.setBounds(25, 105, 500, 25);
         panel.add(lblResiduos);
 
-        JLabel lblRutas = new JLabel("Rutas y Centro de Reciclaje (Cola + Pila)");
+        JLabel lblRutas = new JLabel("Rutas y Centro de Reciclaje");
         lblRutas.setFont(new Font("Segoe UI", Font.BOLD, 16));
         lblRutas.setBounds(25, 260, 500, 25);
         panel.add(lblRutas);

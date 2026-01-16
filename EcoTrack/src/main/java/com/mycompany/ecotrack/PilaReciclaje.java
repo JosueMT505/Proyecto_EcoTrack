@@ -7,28 +7,31 @@ import java.util.NoSuchElementException;
  * Pila LIFO para residuos a procesar (centro de reciclaje).
  * Implementada con ArregloDinamico propio (sin java.util.ArrayList).
  */
-public class PilaReciclaje<E> implements Serializable {
+public class PilaReciclaje<Residuo> implements Serializable {
     private static final long serialVersionUID = 1L;
-
-    private final ArrayList<E> elementos;
-
+    private final ArrayList<Residuo> elementos;
+    private Nodo cima;
 
     public PilaReciclaje() {
-        this.elementos = new ArrayList<E>();
+        this.elementos = new ArrayList<Residuo>();
     }
 
-    public void apilarResiduo(E elemento) {
+    public ArrayList<Residuo> getElementos() {
+        return elementos;
+    }
+    
+    public void apilarResiduo(Residuo elemento) {
         elementos.addLast(elemento);
     }
-
-    public E desapilarResiduo() {
+    
+    public Residuo desapilarResiduo() {
         if (estaVacia()) {
             throw new NoSuchElementException("La pila de reciclaje esta vacia.");
         }
         return elementos.removeLast();
     }
 
-    public E verTope() {
+    public Residuo verTope() {
         if (estaVacia()) {
             throw new NoSuchElementException("La pila de reciclaje esta vacia.");
         }
@@ -42,4 +45,5 @@ public class PilaReciclaje<E> implements Serializable {
     public int size() {
         return elementos.size();
     }
+
 }
