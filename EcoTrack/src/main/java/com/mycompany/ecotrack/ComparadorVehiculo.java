@@ -15,7 +15,7 @@ public class ComparadorVehiculo implements Comparator<VehiculoRecolector> {
     }
 
     @Override
-    public int compare(Vehiculo v1, Vehiculo v2) {
+    public int compare(VehiculoRecolector v1, VehiculoRecolector v2) {
         Zona z1 = sistema.getMapaZonas().get(v1.getZonaAsignadaId());
         Zona z2 = sistema.getMapaZonas().get(v2.getZonaAsignadaId());
 

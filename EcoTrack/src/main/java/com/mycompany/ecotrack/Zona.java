@@ -51,7 +51,7 @@ public class Zona implements Serializable {
     }
 
     public List<Residuo> getListaResiduos() {
-        return residuosPendientes; 
+        return listaResiduos; 
     }
 
     

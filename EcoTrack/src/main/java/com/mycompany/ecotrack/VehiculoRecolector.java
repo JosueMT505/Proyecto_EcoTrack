@@ -26,7 +26,7 @@ public class VehiculoRecolector implements Serializable {
 
 
     
-public void cargarResiduos(double volumen) {
+    public void cargarResiduos(double volumen) {
         if (this.volumenActual + volumen > this.capacidadMaxima) {
             System.out.println("Error: El vehículo " + id + " se ha llenado al máximo.");
             this.volumenActual = this.capacidadMaxima;
@@ -40,8 +40,6 @@ public void cargarResiduos(double volumen) {
         this.nivelLlenado = 0.0;
         this.enRuta = false; 
     }
-
-
     
     public double getNivelLlenado() {return volumenActual / capacidadMaxima;}
     public String getId() { return id; }
@@ -50,9 +48,8 @@ public void cargarResiduos(double volumen) {
     public String getZonaAsignadaId() { return zonaAsignadaId; }
     public boolean isEnRuta() { return enRuta; }
     public void setEnRuta(boolean enRuta) { this.enRuta = enRuta; }
-}
 
-@Override
+    @Override
     public String toString() {
         return "Vehículo " + id + " [Zona: " + zonaAsignadaId + ", Llenado: " + String.format("%.2f", nivelLlenado * 100) + "%]";
     }
