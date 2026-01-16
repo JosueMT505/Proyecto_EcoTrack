@@ -16,15 +16,12 @@ public class PilaReciclaje<E> {
     }
 
 
-    public void push(E elemento) {
+    public void apilarResiduo(E elemento) {
         elementos.add(elemento);
     }
 
-    /**
-     * Remueve y devuelve el elemento en la cima de la pila (LIFO).
-     * devuelve el elemento más reciente agregado.
-     */
-    public E pop() {
+
+    public E desapilarResiduo() {
         if (estaVacia()) {
             throw new NoSuchElementException("La pila de reciclaje está vacía.");
         }
@@ -33,11 +30,7 @@ public class PilaReciclaje<E> {
         return elementos.remove(indiceCima);
     }
 
-    /**
-     * Devuelve el elemento en la cima de la pila sin removerlo.
-     * devuelve el elemento más reciente agregado.
-     */
-    public E peek() {
+    public E verTope() {
         if (estaVacia()) {
             throw new NoSuchElementException("La pila de reciclaje está vacía.");
         }
