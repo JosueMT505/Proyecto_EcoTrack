@@ -19,27 +19,30 @@ public class ColaPrioridad<E> {
     }
 
 
-    public void encolar(E elemento) {
+    public void agregarVehiculo(E elemento) {
         heap.add(elemento);
         flotar(heap.size() - 1);
     }
 
 
-    public E desencolar() {
+    public E despacharVehiculo() {
         if (estaVacia()) {
-            throw new NoSuchElementException("La cola de prioridad está vacía.");
+            throw new NoSuchElementException("No hay vehículos para despachar.");
         }
 
         intercambiar(0, heap.size() - 1);
         E elementoPrioritario = heap.remove(heap.size() - 1);
-        hundir(0); 
+       
+        if (!estaVacia()) {
+            hundir(0);
+        }
         
         return elementoPrioritario;
     }
 
-    public E peek() {
+    public E verSiguienteVehiculo() {
         if (estaVacia()) {
-            throw new NoSuchElementException("La cola de prioridad está vacía.");
+            throw new NoSuchElementException("No existen más vehiculos.");
         }
         return heap.get(0);
     }
@@ -48,6 +51,14 @@ public class ColaPrioridad<E> {
         return heap.isEmpty();
     }
 
+    public int size() {
+        return heap.size();
+    }
+    
+
+
+
+    
     private void flotar(int indice) {
         while (indice > 0 && esMayor(indice, padre(indice))) {
             intercambiar(indice, padre(indice));
