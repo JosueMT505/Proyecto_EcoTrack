@@ -7,7 +7,7 @@ import java.util.Comparator;
  *
  * @author Grupo 8
  */
-public class ComparadorVehiculo implements Comparator<Vehiculo> {
+public class ComparadorVehiculo implements Comparator<VehiculoRecolector> {
     private Sistema sistema;
 
     public ComparadorVehiculo(Sistema sistema) {
