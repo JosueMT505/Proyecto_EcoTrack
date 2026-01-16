@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class Sistema implements Serializable {
     private ListaEnlazadaCircular<Residuo> listaResiduos; 
-    private ColaPrioridad<Vehiculo> colaVehiculosPendientes; 
+    private ColaPrioridad<VehiculoRecolector> colaVehiculosPendientes; 
     private PilaReciclaje<Residuo> residuosParaProcesar; 
     private Map<String, Zona> mapaZonas; 
     private Map<String, Object> estadisticasGlobales; 
@@ -83,5 +83,26 @@ public class Sistema implements Serializable {
     }
     
     private void actualizarEstadisticas(Residuo residuo) {
+    String tipo = residuo.getTipo();
+    double pesoActual = (double) estadisticasGlobales.getOrDefault("PESO_" + tipo, 0.0);
+    estadisticasGlobales.put("PESO_" + tipo, pesoActual + residuo.getPeso());
+
+    String zonaId = residuo.getZona();
+    int conteoActual = (int) estadisticasGlobales.getOrDefault("CONTEO_" + zonaId, 0);
+    estadisticasGlobales.put("CONTEO_" + zonaId, conteoActual + 1);
+}
+    public String obtenerZonaMasCritica() {
+    String topZona = "Ninguna";
+    int maxResiduos = -1;
+    for (String clave : estadisticasGlobales.keySet()) {
+        if (clave.startsWith("CONTEO_")) {
+            int cantidad = (int) estadisticasGlobales.get(clave);
+            if (cantidad > maxResiduos) {
+                maxResiduos = cantidad;
+                topZona = clave.replace("CONTEO_", "");
+            }
+        }
     }
+    return topZona;
+}
 }
