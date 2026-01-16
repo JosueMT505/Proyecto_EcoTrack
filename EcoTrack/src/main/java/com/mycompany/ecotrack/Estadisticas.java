@@ -4,10 +4,11 @@
  */
 package com.mycompany.ecotrack;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Estadisticas {
+public class Estadisticas implements Serializable {
     private Map<String, Double> pesoPorTipo;
     private Map<String, Integer> residuosPorZona;
 

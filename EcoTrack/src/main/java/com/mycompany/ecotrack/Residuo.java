@@ -1,5 +1,6 @@
 
 package com.mycompany.ecotrack;
+import java.io.Serializable;
 
 import java.time.LocalDate;
 
@@ -7,7 +8,7 @@ import java.time.LocalDate;
  *
  * @author Grupo 8
  */
-public class Residuo implements Comparable<Residuo> {
+public class Residuo implements Comparable<Residuo>, Serializable {
     private final String id; 
     private String nombre;
     private String tipo; 

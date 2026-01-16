@@ -1,43 +1,39 @@
-
 package com.mycompany.ecotrack;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.NoSuchElementException;
 
 /**
- *
- * @author Grupo 8 
+ * Pila LIFO para residuos a procesar (centro de reciclaje).
+ * Implementada con ArregloDinamico propio (sin java.util.ArrayList).
  */
-public class PilaReciclaje<E> {
-    private ArrayList<E> elementos;
+public class PilaReciclaje<E> implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    private final ArrayList<E> elementos;
+
 
     public PilaReciclaje() {
-        this.elementos = new ArrayList<>();
+        this.elementos = new ArrayList<E>();
     }
-
 
     public void apilarResiduo(E elemento) {
-        elementos.add(elemento);
+        elementos.addLast(elemento);
     }
-
 
     public E desapilarResiduo() {
         if (estaVacia()) {
-            throw new NoSuchElementException("La pila de reciclaje está vacía.");
+            throw new NoSuchElementException("La pila de reciclaje esta vacia.");
         }
-        int indiceCima = elementos.size() - 1;
-        
-        return elementos.remove(indiceCima);
+        return elementos.removeLast();
     }
 
     public E verTope() {
         if (estaVacia()) {
-            throw new NoSuchElementException("La pila de reciclaje está vacía.");
+            throw new NoSuchElementException("La pila de reciclaje esta vacia.");
         }
-        int indiceCima = elementos.size() - 1;
-        return elementos.get(indiceCima);
+        return elementos.get(elementos.size() - 1);
     }
-
 
     public boolean estaVacia() {
         return elementos.isEmpty();
