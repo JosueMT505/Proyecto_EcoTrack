@@ -49,7 +49,10 @@ public class Zona implements Serializable {
         this.residuosRecolectados += r.getPeso();
         calcularUtilidad();
     }
-    
+
+    public List<Residuo> getListaResiduos() {
+        return residuosPendientes; 
+    }
 
     
 
